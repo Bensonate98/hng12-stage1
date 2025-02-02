@@ -1,6 +1,6 @@
-# A simple express API
+# A number fun fact API
 
-This is a simple Express.js API that returns a JSON response containing an email, the current date and time, and a GitHub URL.
+This is a simple Express.js API that returns a JSON response funfact about a number
 
 ## Features
 
@@ -20,12 +20,12 @@ Ensure you have the following installed:
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/Bensonate98/hng-12-stage0.git
+   git clone https://github.com/Bensonate98/hng12-stage1.git
 
 2. Navigate to the project directory:
 
    ```sh
-   cd hng-12-stage0
+   cd hng12-stage1
 
 3. Install dependencies:
 
@@ -35,27 +35,27 @@ Ensure you have the following installed:
 4. Create a .env file in the root directory and define the following variable:
 
    ```sh
-   PORT=3000
+   PORT=8080
 
 5. Start server with:
 
    ```sh
    npm run dev
 
-The server will run on http://localhost:3000
+The server will run on http://localhost:8080
 
 ## API Documentation
 
-Base URL: https://ben-stage0.vercel.app/
+Base URL: https://ben-stage1.vercel.app/api/classify-number
 
 Endpoints: 
 
-GET https://ben-stage0.vercel.app/
+GET https://ben-stage1.vercel.app/api/classify-number?number=371
 
-Description: Returns a JSON response with metadata, including an email, the current date and time, and a GitHub URL.
+Description: Returns a JSON response with facts about the number
 
 Request:
-This endpoint does not require any request body or parameters.
+This endpoint requires a number query parameter
 
 Response:
 
@@ -65,9 +65,15 @@ Response Body:
 
  ```sh
 {
-  "email": "bensonate98@gmail.com",
-  "current_datetime": "2025-01-28T12:00:00.000Z",
-  "github_url": "https://github.com/Bensonate98/hng-12-stage0"
+    "number": 371,
+    "is_prime": false,
+    "is_perfect": false,
+    "properties": [
+        "armstrong",
+        "odd"
+    ],
+    "digit_sum": 11,
+    "fun_fact": "371 is a narcissistic number."
 }
 
 
